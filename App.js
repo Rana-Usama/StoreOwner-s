@@ -84,12 +84,20 @@ export default function App() {
       <Drawer.Screen name="MyShelvesScreen" component={MyShelvesScreen} />
       <Drawer.Screen name="MyShelvesBookedScreen" component={MyShelvesBookedScreen} />
       <Drawer.Screen name="PaymentMethodScreen" component={PaymentMethodScreen} />
+<<<<<<< HEAD
       <Stack.Screen name="TypeLocationScreen" component={TypeLocationScreen} />
       <Stack.Screen name="ChooseLocation" component={ChooseLocation} />
       <Stack.Screen name="PopUp" component={PopUp} />
       <Stack.Screen name="ViewShelfEditScreen" component={ViewShelfEditScreen} />
       <Stack.Screen name="MyStoresScreen" component={MyStoresScreen} />
       <Stack.Screen name="Payments" component={Payments} />
+=======
+      <Drawer.Screen name="TypeLocationScreen" component={TypeLocationScreen} />
+      <Drawer.Screen name="ChooseLocation" component={ChooseLocation} />
+      <Drawer.Screen name="PopUp" component={PopUp} />
+      <Drawer.Screen name="ViewShelfEditScreen" component={ViewShelfEditScreen} />
+      <Drawer.Screen name="MyStoresScreen" component={MyStoresScreen} />
+>>>>>>> 003652862daa5f69a9ec19d511e640284bbb138d
     </Drawer.Navigator>
   }
 
