@@ -46,6 +46,10 @@ import ChooseLocation from './app/screens/ChooseLocation';
 import PopUp from './app/components/common/PopUp';
 import MyStoresScreen from './app/screens/MyStoresScreen';
 import CreateShelfStep1 from './app/screens/CreateShelfStep1';
+import CreateShelfStep2 from './app/screens/CreateShelfStep2';
+import CreateShelfStep3 from './app/screens/CreateShelfStep3';
+import ViewBookingScreen from './app/screens/ViewBookingScreen';
+import Payments from './app/screens/Payments';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -92,9 +96,13 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="HomeDrawer">
+      <Stack.Navigator headerMode="none" initialRouteName="Payments">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen name="Payments" component={Payments} />
+        <Stack.Screen name="ViewBookingScreen" component={ViewBookingScreen} />
         <Stack.Screen name="CreateShelfStep1" component={CreateShelfStep1} />
+        <Stack.Screen name="CreateShelfStep2" component={CreateShelfStep2} />
+        <Stack.Screen name="CreateShelfStep3" component={CreateShelfStep3} />
         <Stack.Screen name="MyProfileEditScreen" component={MyProfileEditScreen} />
         <Stack.Screen name="MyProfileScreen" component={MyProfileScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />

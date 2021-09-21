@@ -51,8 +51,8 @@ function AppDrawer({ navigation }) {
 
     return (
         <View style={{ flex: 1, backgroundColor: "#f5f5f5" }} >
-            <Image style={{ position: 'absolute', top: 0, left: 0 }} source={require('../../../assets/images/whitetop.png')} />
-            <Image style={{ position: 'absolute', bottom: 0, left: 0 }} source={require('../../../assets/images/whitebottom.png')} />
+            {/* <Image style={{ position: 'absolute', top: 0, left: 0 }} source={require('../../../assets/images/whitetop.png')} />
+            <Image style={{ position: 'absolute', bottom: 0, left: 0 }} source={require('../../../assets/images/whitebottom.png')} /> */}
 
             <View style={{ justifyContent: "center", alignItems: 'center', width: "90%", height: RFPercentage(15), flexDirection: 'row', padding: RFPercentage(2.4), marginTop: RFPercentage(3) }} >
                 <View style={{ width: "45%", justifyContent: 'center', alignItems: 'center' }} >

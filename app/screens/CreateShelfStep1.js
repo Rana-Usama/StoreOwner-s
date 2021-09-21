@@ -12,8 +12,6 @@ import LoadingModal from '../components/common/LoadingModel';
 
 //config
 import Colors from '../config/Colors';
-import PopUp from '../components/common/PopUp';
-import { Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 
 function CreateShelfStep1(props) {
 
@@ -65,14 +63,15 @@ function CreateShelfStep1(props) {
     };
 
     const handleLogin = () => {
-        showIndicator(true);
-        let tempfeilds = [...inputField];
+        // showIndicator(true);
+        // let tempfeilds = [...inputField];
 
-        if (tempfeilds[0].value === "" || tempfeilds[2].value === "") {
-            alert("Please fill all the feilds !");
-            showIndicator(false);
-            return true;
-        }
+        // if (tempfeilds[0].value === "" || tempfeilds[2].value === "") {
+        //     alert("Please fill all the feilds !");
+        //     showIndicator(false);
+        //     return true;
+        // }
+        props.navigation.navigate("CreateShelfStep2")
         // setModel(true);
 
         try {
@@ -94,7 +93,7 @@ function CreateShelfStep1(props) {
                 <View style={{ backgroundColor: Colors.white, position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(4), borderTopLeftRadius: RFPercentage(5), borderTopRightRadius: RFPercentage(5) }}>
                 </View>
                 {/* Icon */}
-                <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.5} style={{ position: 'absolute', top: RFPercentage(8), left: RFPercentage(4) }}>
+                <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(8), left: RFPercentage(4) }}>
                     <Image source={require('../../assets/images/notiDash.png')} />
                 </TouchableOpacity>
                 {/*Image Heading */}
@@ -125,7 +124,7 @@ function CreateShelfStep1(props) {
                                     borderColor={Colors.background}
                                     height={RFPercentage(7.3)}
                                     fontSize={RFPercentage(2)}
-                                    onTouchStart={() => { i === 1 ? props.navigation.navigate("TypeLocationScreen") : setBottomTab(false) }}
+                                    onTouchStart={() => setBottomTab(false)}
                                     onTouchEnd={() => setBottomTab(true)}
                                     placeholderColor={'#82867D'}
                                     fontFamily={'Quicksand_400Regular'}

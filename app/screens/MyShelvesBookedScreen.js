@@ -10,7 +10,7 @@ import BottomTab from './../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
-import MyShelvesScreen from './MyShelvesScreen';
+
 
 function MyShelvesBookedScreen(props) {
 
@@ -26,7 +26,7 @@ function MyShelvesBookedScreen(props) {
             <ScrollView style={{ backgroundColor: Colors.backgroundColor, flex: 1, width: '100%' }} >
                 {/* Nav Icon and titles */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                    <NavTitlesAndIcon onPress={() => props.navigation.navigate("MyShelvesScreen")} mainTitle="My Spots" sideTitle="BOOK" />
+                    <NavTitlesAndIcon onPressSideText={() => props.navigation.navigate("MyBookings")} onPress={() => props.navigation.navigate("MyShelvesScreen")} mainTitle="My Spots" sideTitle="BOOK" />
                 </View>
                 {/*Top Buttons */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
@@ -35,7 +35,7 @@ function MyShelvesBookedScreen(props) {
                 {/* Listings */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                     {data.map((item, i) => (
-                        <MiniCard number={false} key={i} title1={item.mainTitle} title2={item.subTitle} />
+                        <MiniCard onPressTitle={() => props.navigation.navigate("ViewBookingScreen")} onPressImage={() => props.navigation.navigate("ViewBookingScreen")} number={false} key={i} title1={item.mainTitle} title2={item.subTitle} />
                     ))}
                 </View>
             </ScrollView>

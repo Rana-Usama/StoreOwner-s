@@ -8,7 +8,7 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 //config
 import Colors from '../../config/Colors';
 
-function NavTitlesAndIcon({ onPress = () => { }, mainTitle, sideTitle, icon = false }) {
+function NavTitlesAndIcon({ onPress = () => { }, onPressSideText = () => { }, mainTitle, sideTitle, icon = false }) {
     return (
         <View style={{ width: '90%', marginTop: RFPercentage(9), alignItems: 'center', justifyContent: 'center' }}>
             {/* BackIcon */}
@@ -36,11 +36,11 @@ function NavTitlesAndIcon({ onPress = () => { }, mainTitle, sideTitle, icon = fa
                     <SimpleLineIcons name="options-vertical" size={RFPercentage(2.5)} color={Colors.black} />
                 </TouchableOpacity>
                 :
-                <View style={{ position: 'absolute', alignSelf: 'flex-end', right: RFPercentage(2.5) }}>
+                <TouchableOpacity onPress={onPressSideText} style={{ position: 'absolute', alignSelf: 'flex-end', right: RFPercentage(2.5) }}>
                     <Text style={{ fontFamily: "Quicksand_500Medium", color: Colors.lightGrey, fontSize: RFPercentage(1.8) }}>
                         {sideTitle}
                     </Text>
-                </View>
+                </TouchableOpacity>
             }
 
 
