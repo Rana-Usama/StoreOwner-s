@@ -50,7 +50,10 @@ function AppDrawer({ navigation }) {
     ]
 
     return (
-        <View style={{ flex: 1, backgroundColor: Colors.primary }} >
+        <View style={{ flex: 1, backgroundColor: "#f5f5f5" }} >
+            <Image style={{ position: 'absolute', top: 0, left: 0 }} source={require('../../../assets/images/whitetop.png')} />
+            <Image style={{ position: 'absolute', bottom: 0, left: 0 }} source={require('../../../assets/images/whitebottom.png')} />
+
             <View style={{ justifyContent: "center", alignItems: 'center', width: "90%", height: RFPercentage(15), flexDirection: 'row', padding: RFPercentage(2.4), marginTop: RFPercentage(3) }} >
                 <View style={{ width: "45%", justifyContent: 'center', alignItems: 'center' }} >
                     <Image height={RFPercentage(10)} width={RFPercentage(12)} style={{ width: RFPercentage(13), height: RFPercentage(10) }} source={logoWhite} />
@@ -65,10 +68,10 @@ function AppDrawer({ navigation }) {
                             navigation.navigate(item.path)
                         }} style={{ alignSelf: "flex-start", flexDirection: "row", justifyContent: "center", alignItems: "center" }} >
                             <Image source={item.image} style={{ width: RFPercentage(2.2), height: RFPercentage(2.2) }} />
-                            <Text style={{ marginLeft: RFPercentage(1.5), color: Colors.white, fontSize: RFPercentage(2.4), fontWeight: Platform.OS === "android" ? "bold" : "700" }} >{item.label}</Text>
+                            <Text style={{ marginLeft: RFPercentage(1.5), color: "#50555C", fontSize: RFPercentage(2.4), fontWeight: Platform.OS === "android" ? "bold" : "700" }} >{item.label}</Text>
                         </TouchableOpacity>
                     </View>
-                    <Divider style={{ marginTop: RFPercentage(2.8), backgroundColor: Colors.white, width: "50%", alignSelf: "center" }} />
+                    <Divider style={{ marginTop: RFPercentage(2.8), backgroundColor: "#F4F4F8", width: "50%", alignSelf: "center" }} />
                 </View>
             ))}
 
@@ -78,7 +81,7 @@ function AppDrawer({ navigation }) {
                     <TouchableOpacity activeOpacity={0.7} onPress={() => {
                         navigation.navigate("scree name")
                     }} style={{ alignSelf: "flex-start", flexDirection: "row", justifyContent: "center", alignItems: "center" }} >
-                        <Text style={{ marginLeft: RFPercentage(1.5), color: Colors.white, fontSize: RFPercentage(2.4), fontWeight: Platform.OS === "android" ? "bold" : "700" }} >Adamu Ciroma</Text>
+                        <Text style={{ marginLeft: RFPercentage(1.5), color: Colors.primary, fontSize: RFPercentage(2.4), fontWeight: Platform.OS === "android" ? "bold" : "700" }} >Adamu Ciroma</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -89,8 +92,8 @@ function AppDrawer({ navigation }) {
                     <TouchableOpacity activeOpacity={0.7} onPress={() => {
                         navigation.navigate("scree name")
                     }} style={{ alignSelf: "flex-start", flexDirection: "row", justifyContent: "center", alignItems: "center" }} >
-                        <Text style={{ marginLeft: RFPercentage(1.5), color: Colors.white, fontSize: RFPercentage(2.4), fontWeight: Platform.OS === "android" ? "bold" : "700" }} >Sign-out</Text>
-                        <AntDesign style={{ marginLeft: RFPercentage(1) }} name="arrowright" color={Colors.white} size={RFPercentage(2.6)} />
+                        <Text style={{ marginLeft: RFPercentage(1.5), color: "#979797", fontSize: RFPercentage(2.4), fontWeight: Platform.OS === "android" ? "bold" : "700" }} >Sign-out</Text>
+                        <AntDesign style={{ marginLeft: RFPercentage(1) }} name="arrowright" color="#979797" size={RFPercentage(2.6)} />
                     </TouchableOpacity>
                 </View>
             </View>
