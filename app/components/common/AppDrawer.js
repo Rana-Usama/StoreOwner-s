@@ -39,7 +39,7 @@ function AppDrawer({ navigation }) {
             id: 3,
             label: "Payments",
             image: payments,
-            path: "Screen name to navigate"
+            path: "Payments"
         },
         {
             id: 4,

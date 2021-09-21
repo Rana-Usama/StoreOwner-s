@@ -96,7 +96,7 @@ function MyProfileEditScreen(props) {
                     </View>
                 </ScrollView>
                 {bottomTab ?
-                    <View style={{ marginBottom: RFPercentage(1.5), alignItems: 'center', flexDirection: 'row', width: '100%', height: RFPercentage(10.8), position: 'absolute', bottom: 0, borderRadius: RFPercentage(30), backgroundColor: '#F2560E' }}>
+                    <View style={{ marginBottom: RFPercentage(0), alignItems: 'center', flexDirection: 'row', width: '100%', height: RFPercentage(8.5), position: 'absolute', bottom: 0, borderRadius: RFPercentage(30), backgroundColor: '#F2560E' }}>
                         <TouchableOpacity>
                             <Image style={{ marginLeft: RFPercentage(5) }} source={require('../../assets/images/town.png')} />
                         </TouchableOpacity>
@@ -112,7 +112,6 @@ function MyProfileEditScreen(props) {
                     </View> :
                     null
                 }
-
             </Screen>
         </KeyboardAvoidingView>
     );

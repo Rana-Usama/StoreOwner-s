@@ -74,7 +74,7 @@ function Payments(props) {
                     {data.map((item, i) => (
                         <View key={i} style={{ flexDirection: 'row', width: '90%', backgroundColor: Colors.white, alignItems: 'center', justifyContent: 'flex-start', height: RFPercentage(14), marginTop: RFPercentage(1.3), borderRadius: RFPercentage(2) }}>
                             {/* Titles to the left */}
-                            <View style={{ left: RFPercentage(4) }}>
+                            <View style={{ left: RFPercentage(3) }}>
                                 <Text style={{ fontSize: RFPercentage(2.5), color: "#313942", fontFamily: 'Quicksand_700Bold' }}>
                                     {item.mainTitle}
                                 </Text>
@@ -87,15 +87,15 @@ function Payments(props) {
                             </View>
                             {/*Titles to the right */}
                             <View style={{ position: 'absolute', justifyContent: 'center', alignItems: 'center', right: RFPercentage(3), bottom: RFPercentage(2) }}>
-                                <Text style={{ color: item.pending ? "#FD6721" : "#58B952", fontSize: RFPercentage(2.5) }}>
+                                <Text style={{ color: item.pending ? "#FD6721" : "#58B952", fontSize: RFPercentage(2.2) }}>
                                     {item.sub3Right}
                                 </Text>
                             </View>
                             <View style={{ flexDirection: 'row', position: 'absolute', justifyContent: 'center', alignItems: 'center', right: RFPercentage(3), top: RFPercentage(2) }}>
-                                <Text style={{ marginRight: RFPercentage(2), color: "#707070", fontSize: RFPercentage(2.5) }}>
+                                <Text style={{ marginRight: RFPercentage(2), color: "#707070", fontSize: RFPercentage(2) }}>
                                     {item.date}
                                 </Text>
-                                <Text style={{ color: "#707070", fontSize: RFPercentage(2.5) }}>
+                                <Text style={{ color: "#707070", fontSize: RFPercentage(2) }}>
                                     {item.time}
                                 </Text>
                             </View>

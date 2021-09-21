@@ -75,16 +75,28 @@ function MyProfileScreen(props) {
                     <TouchableOpacity onPress={() => props.navigation.navigate("MyProfileEditScreen")} style={{ justifyContent: 'center', marginTop: RFPercentage(3), width: '86%', height: RFPercentage(8), backgroundColor: "#ffff", borderRadius: RFPercentage(2.5) }}>
                         <View style={{ alignItems: 'center', flexDirection: 'row', marginLeft: RFPercentage(4) }}>
                             <Image source={require('../../assets/images/info.png')} />
-                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>Change Infomation</Text>
+                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>
+                                Change Infomation
+                            </Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => props.navigation.navigate("MyProfileEditScreen")} style={{ marginBottom: RFPercentage(5), justifyContent: 'center', marginTop: RFPercentage(3), width: '86%', height: RFPercentage(8), backgroundColor: "#ffff", borderRadius: RFPercentage(2.5) }}>
+                    <TouchableOpacity onPress={() => props.navigation.navigate("BankInformation")} style={{ justifyContent: 'center', marginTop: RFPercentage(3), width: '86%', height: RFPercentage(8), backgroundColor: "#ffff", borderRadius: RFPercentage(2.5) }}>
                         <View style={{ alignItems: 'center', flexDirection: 'row', marginLeft: RFPercentage(4) }}>
                             <Image source={require('../../assets/images/pass.png')} />
-                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>Change Password</Text>
+                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>
+                                Bank Information
+                            </Text>
                         </View>
                     </TouchableOpacity>
-                    <View style={{ width: '100%', marginBottom: RFPercentage(20) }}>
+                    <TouchableOpacity onPress={() => props.navigation.navigate("MyProfileEditScreen")} style={{ justifyContent: 'center', marginTop: RFPercentage(3), width: '86%', height: RFPercentage(8), backgroundColor: "#ffff", borderRadius: RFPercentage(2.5) }}>
+                        <View style={{ alignItems: 'center', flexDirection: 'row', marginLeft: RFPercentage(4) }}>
+                            <Image source={require('../../assets/images/pass.png')} />
+                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>
+                                Change Password
+                            </Text>
+                        </View>
+                    </TouchableOpacity>
+                    <View style={{ width: '100%', marginBottom: RFPercentage(20), marginTop: RFPercentage(8) }}>
                         <MyAppButton
                             title="Sign Out"
                             padding={RFPercentage(2.7)}
@@ -98,7 +110,7 @@ function MyProfileScreen(props) {
                 </View>
             </ScrollView>
             {/* BottomTab */}
-            <View style={{ marginBottom: RFPercentage(0.5), alignItems: 'center', flexDirection: 'row', width: '100%', height: RFPercentage(10.8), position: 'absolute', bottom: 0, borderRadius: RFPercentage(30), backgroundColor: '#F2560E' }}>
+            <View style={{ marginBottom: RFPercentage(0), alignItems: 'center', flexDirection: 'row', width: '100%', height: RFPercentage(8.5), position: 'absolute', bottom: 0, borderRadius: RFPercentage(30), backgroundColor: '#F2560E' }}>
                 <TouchableOpacity>
                     <Image style={{ marginLeft: RFPercentage(5) }} source={require('../../assets/images/town.png')} />
                 </TouchableOpacity>

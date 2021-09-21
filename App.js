@@ -51,6 +51,7 @@ import CreateShelfStep3 from './app/screens/CreateShelfStep3';
 import ViewBookingScreen from './app/screens/ViewBookingScreen';
 import Payments from './app/screens/Payments';
 import RequestPayment from './app/screens/RequestPayment';
+import BankInformation from './app/screens/BankInformation';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -70,7 +71,7 @@ export default function App() {
 
   // screeen which have drawer icon
   const HomeDrawer = () => {
-    return <Drawer.Navigator initialRouteName="HomeScreen" drawerType={"front"} overlayColor="transparent" edgeWidth={100} drawerStyle={{ backgroundColor: Colors.white, width: "75%" }} drawerContent={(props) => <AppDrawer {...props} />}  >
+    return <Drawer.Navigator initialRouteName="DashboardScreen" drawerType={"front"} overlayColor="transparent" edgeWidth={100} drawerStyle={{ backgroundColor: Colors.white, width: "75%" }} drawerContent={(props) => <AppDrawer {...props} />}  >
       <Drawer.Screen name="HomeScreen" component={HomeScreen} />
       <Drawer.Screen name="ChooseStore" component={ChooseStore} />
       <Drawer.Screen name="Store1Screen" component={Store1Screen} />
@@ -88,6 +89,7 @@ export default function App() {
       <Stack.Screen name="PopUp" component={PopUp} />
       <Stack.Screen name="ViewShelfEditScreen" component={ViewShelfEditScreen} />
       <Stack.Screen name="MyStoresScreen" component={MyStoresScreen} />
+      <Stack.Screen name="Payments" component={Payments} />
     </Drawer.Navigator>
   }
 
@@ -97,9 +99,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="Payments">
+      <Stack.Navigator headerMode="none" initialRouteName="HomeDrawer">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        <Stack.Screen name="Payments" component={Payments} />
+        <Stack.Screen name="BankInformation" component={BankInformation} />
         <Stack.Screen name="RequestPayment" component={RequestPayment} />
         <Stack.Screen name="ViewBookingScreen" component={ViewBookingScreen} />
         <Stack.Screen name="CreateShelfStep1" component={CreateShelfStep1} />
