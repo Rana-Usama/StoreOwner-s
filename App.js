@@ -41,6 +41,8 @@ import AppDrawer from './app/components/common/AppDrawer';
 import MyProfileScreen from './app/screens/MyProfileScreen';
 import MyProfileEditScreen from './app/screens/MyProfileEditScreen';
 import PaymentMethodScreen from './app/screens/PaymentMethodScreen';
+import TypeLocationScreen from './app/screens/TypeLocationScreen';
+import ChooseLocation from './app/screens/ChooseLocation';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -73,6 +75,8 @@ export default function App() {
       <Drawer.Screen name="MyShelvesScreen" component={MyShelvesScreen} />
       <Drawer.Screen name="MyShelvesBookedScreen" component={MyShelvesBookedScreen} />
       <Drawer.Screen name="PaymentMethodScreen" component={PaymentMethodScreen} />
+      <Stack.Screen name="TypeLocationScreen" component={TypeLocationScreen} />
+      <Stack.Screen name="ChooseLocation" component={ChooseLocation} />
     </Drawer.Navigator>
   }
 

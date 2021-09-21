@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ImageBackground, Image, TouchableOpacity, View, Text, ScrollView, KeyboardAvoidingView } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
-import { AntDesign } from '@expo/vector-icons';
 
 //components
 import Screen from '../components/Screen';
@@ -18,6 +17,7 @@ function CreateStoreScreen(props) {
 
     const [bottomTab, setBottomTab] = useState(true)
     const [indicator, showIndicator] = useState(false);
+
     const [inputField, SetInputField] = useState([
         {
             placeholder: "Enter your business name",
@@ -99,7 +99,7 @@ function CreateStoreScreen(props) {
                                     borderColor={Colors.background}
                                     height={RFPercentage(7.3)}
                                     fontSize={RFPercentage(2)}
-                                    onTouchStart={() => setBottomTab(false)}
+                                    onTouchStart={() => { i === 1 ? props.navigation.navigate("TypeLocationScreen") : setBottomTab(false) }}
                                     onTouchEnd={() => setBottomTab(true)}
                                     placeholderColor={'#82867D'}
                                     fontFamily={'Quicksand_400Regular'}
