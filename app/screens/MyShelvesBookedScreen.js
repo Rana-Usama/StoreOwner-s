@@ -10,6 +10,7 @@ import BottomTab from './../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
+import MyShelvesScreen from './MyShelvesScreen';
 
 function MyShelvesBookedScreen(props) {
 
@@ -29,7 +30,7 @@ function MyShelvesBookedScreen(props) {
                 </View>
                 {/*Top Buttons */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                    <TwoButtonsContainer buttonTitle1="Ongoing" buttonTitle2="Booking History" />
+                    <TwoButtonsContainer onPressButton1={() => props.navigation.navigate("MyShelvesScreen")} buttonTitle1="Available" buttonTitle2="      Booked      " button2Background={true} />
                 </View>
                 {/* Listings */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>

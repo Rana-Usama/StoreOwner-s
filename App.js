@@ -43,6 +43,9 @@ import MyProfileEditScreen from './app/screens/MyProfileEditScreen';
 import PaymentMethodScreen from './app/screens/PaymentMethodScreen';
 import TypeLocationScreen from './app/screens/TypeLocationScreen';
 import ChooseLocation from './app/screens/ChooseLocation';
+import PopUp from './app/components/common/PopUp';
+import MyStoresScreen from './app/screens/MyStoresScreen';
+import CreateShelfStep1 from './app/screens/CreateShelfStep1';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -77,6 +80,9 @@ export default function App() {
       <Drawer.Screen name="PaymentMethodScreen" component={PaymentMethodScreen} />
       <Stack.Screen name="TypeLocationScreen" component={TypeLocationScreen} />
       <Stack.Screen name="ChooseLocation" component={ChooseLocation} />
+      <Stack.Screen name="PopUp" component={PopUp} />
+      <Stack.Screen name="ViewShelfEditScreen" component={ViewShelfEditScreen} />
+      <Stack.Screen name="MyStoresScreen" component={MyStoresScreen} />
     </Drawer.Navigator>
   }
 
@@ -88,6 +94,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName="HomeDrawer">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen name="CreateShelfStep1" component={CreateShelfStep1} />
         <Stack.Screen name="MyProfileEditScreen" component={MyProfileEditScreen} />
         <Stack.Screen name="MyProfileScreen" component={MyProfileScreen} />
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
@@ -96,7 +103,6 @@ export default function App() {
         <Stack.Screen name="HomeDrawer" component={HomeDrawer} />
         <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
         <Stack.Screen name="MyBookings" component={MyBookings} />
-        <Stack.Screen name="ViewShelfEditScreen" component={ViewShelfEditScreen} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />
         <Stack.Screen name="LoginNumberScreen" component={LoginNumberScreen} />
         <Stack.Screen name="SentCodeScreen" component={SentCodeScreen} />

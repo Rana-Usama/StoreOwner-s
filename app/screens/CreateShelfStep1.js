@@ -13,24 +13,46 @@ import LoadingModal from '../components/common/LoadingModel';
 //config
 import Colors from '../config/Colors';
 import PopUp from '../components/common/PopUp';
+import { Quicksand_700Bold } from '@expo-google-fonts/quicksand';
 
-function CreateStoreScreen(props) {
+function CreateShelfStep1(props) {
 
     const [bottomTab, setBottomTab] = useState(true);
-    const [model, setModel] = useState(false);
+    // const [model, setModel] = useState(false);
     const [indicator, showIndicator] = useState(false);
 
     const [inputField, SetInputField] = useState([
         {
-            placeholder: "Enter your business name",
+            placeholder: "Shelf Title",
             value: "",
         },
         {
-            placeholder: "Enter your location (Google Address)",
+            placeholder: "Description",
             value: "",
         },
         {
-            placeholder: "Select Store category",
+            placeholder: "Product Category",
+            dropdownIcon: true,
+            value: "",
+        },
+        {
+            placeholder: "Select Unit",
+            dropdownIcon: true,
+            title: 'Enter dimensions of shelf',
+            value: "",
+        },
+        {
+            placeholder: "Select Rental Period",
+            dropdownIcon: true,
+            value: "",
+        },
+        {
+            placeholder: "Select Available Space",
+            dropdownIcon: true,
+            value: "",
+        },
+        {
+            placeholder: "Enter Space Price",
             dropdownIcon: true,
             value: "",
         },
@@ -51,7 +73,7 @@ function CreateStoreScreen(props) {
             showIndicator(false);
             return true;
         }
-        setModel(true);
+        // setModel(true);
 
         try {
             // API integration will come here
@@ -77,12 +99,12 @@ function CreateStoreScreen(props) {
                 </TouchableOpacity>
                 {/*Image Heading */}
                 <Text style={{ fontWeight: 'bold', color: Colors.white, bottom: RFPercentage(2.3), fontSize: RFPercentage(2.7) }}>
-                    Add Store
+                    Create Spot
                 </Text>
             </ImageBackground>
             {/* Central heading */}
             <Text style={{ color: '#313942', fontSize: RFPercentage(2.3), marginTop: RFPercentage(1.5), fontFamily: 'Montserrat_500Medium' }}>
-                STORE INFORMATION
+                SPOT INFORMATION
             </Text>
 
             {/* ScrollView */}
@@ -96,6 +118,7 @@ function CreateStoreScreen(props) {
                     <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: RFPercentage(4) }}>
                         {inputField.map((item, i) => (
                             <View key={i} style={{ marginTop: RFPercentage(2) }} >
+                                <Text style={{ fontSize: RFPercentage(2.2), marginBottom: i === 3 ? RFPercentage(2) : RFPercentage(-2), color: '#82867D', fontFamily: 'Quicksand_700Bold', marginLeft: RFPercentage(2) }}>{item.title}</Text>
                                 <InputField
                                     placeholder={item.placeholder}
                                     backgroundColor={Colors.background}
@@ -116,13 +139,10 @@ function CreateStoreScreen(props) {
                         ))}
                     </View>
                 </KeyboardAvoidingView>
-                {/* Adding photos component */}
-                <ImageAddingComponent title1="Store Main Photo" title2="Upload the main photo of your store" />
-                <ImageAddingComponent title1="Photo Gallery (Optional)" title2="Upload other photos for this listing" threeBoxes={true} marginTop={RFPercentage(3.8)} />
                 {/* Create profile button */}
                 <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(5), marginBottom: RFPercentage(25) }}>
                     <MyAppButton
-                        title="Create Profile"
+                        title="Continue"
                         bold={false}
                         onPress={() => handleLogin()}
                         backgroundColor={"#FD6721"}
@@ -140,9 +160,9 @@ function CreateStoreScreen(props) {
             }
 
 
-            <PopUp title="Your paymet has been confirmed. You can check the details for departure. " buttonTitle="Continue" showModel={model} onPress={() => { props.navigation.navigate("MyStoresScreen"), setModel(false) }} />
+            {/* <PopUp title="Your paymet has been confirmed. You can check the details for departure. " buttonTitle="Continue" showModel={model} onPress={() => { props.navigation.navigate("MyStoresScreen"), setModel(false) }} /> */}
         </Screen>
     );
 }
 
-export default CreateStoreScreen;
+export default CreateShelfStep1;

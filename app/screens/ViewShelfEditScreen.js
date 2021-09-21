@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, ScrollView, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { View, Text, ImageBackground, ScrollView, Image, TouchableOpacity, KeyboardAvoidingView, Switch } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -15,11 +15,18 @@ import LoadingModal from './../components/common/LoadingModel';
 import Colors from '../config/Colors';
 import { Dimensions } from 'react-native';
 import SmallInputField from '../components/common/SmallInputField';
+import PopUp from '../components/common/PopUp';
 
 
 const { width } = Dimensions.get('window')
 
 function ViewShelfEditScreen(props) {
+
+    const [isEnabled, setIsEnabled] = useState(false);
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+    const [model, setModel] = useState(false);
+
 
     const [bottomTab, setBottomTab] = useState(true)
     const [indicator, showIndicator] = useState(false);
@@ -84,6 +91,7 @@ function ViewShelfEditScreen(props) {
             showIndicator(false);
             return true;
         }
+        setModel(true);
 
         try {
 
@@ -114,8 +122,17 @@ function ViewShelfEditScreen(props) {
                         {/* Image Title */}
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                             <Text style={{ fontFamily: 'Quicksand_400Regular', marginTop: RFPercentage(7), color: "#313942", fontSize: RFPercentage(2.3) }}>
-                                Prime Shelf
+                                Prime Spot
                             </Text>
+                            <View style={{ position: 'absolute', right: 0, top: RFPercentage(6.5), right: RFPercentage(5) }}>
+                                <Switch
+                                    trackColor={{ false: "#767577", true: Colors.primary }}
+                                    thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                                    ios_backgroundColor="#3e3e3e"
+                                    onValueChange={toggleSwitch}
+                                    value={isEnabled}
+                                />
+                            </View>
                         </View>
                         {/* Main Image */}
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '90%' }}>
@@ -199,9 +216,9 @@ function ViewShelfEditScreen(props) {
                         </View>
 
                         {/* Setup Spot Button */}
-                        <View style={{ width: "100%", alignItems: "center", top: RFPercentage(3), marginBottom: RFPercentage(20) }}>
+                        <View style={{ width: "100%", alignItems: "center", top: RFPercentage(3), marginBottom: RFPercentage(25) }}>
                             <MyAppButton
-                                title="Setup Spot"
+                                title="Update"
                                 padding={RFPercentage(2.7)}
                                 bold={false}
                                 onPress={() => handleLogin()}
@@ -209,9 +226,14 @@ function ViewShelfEditScreen(props) {
                                 color={Colors.white}
                                 width={"90%"}
                             />
+                            <TouchableOpacity>
+                                <Text style={{ fontSize: RFPercentage(2.5), marginTop: RFPercentage(3), color: '#82867D', fontFamily: 'Montserrat_500Medium' }}>Delete</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </ScrollView>
+                <PopUp title="You have successfully updated your spot on RetailSpot" buttonTitle="Continue" showModel={model} onPress={() => { props.navigation.navigate("CreateShelfStep1"), setModel(false) }} />
+
             </Screen>
             {bottomTab ?
                 <BottomTab onPressFirstIcon={() => props.navigation.navigate("CreateStoreScreen")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} /> :

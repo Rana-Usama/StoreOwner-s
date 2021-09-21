@@ -11,8 +11,7 @@ import BottomTab from '../components/common/BottomTab';
 
 //config
 import Colors from '../config/Colors';
-import MyShelvesBookedScreen from './MyShelvesBookedScreen';
-import ViewShelfEditScreen from './ViewShelfEditScreen';
+
 
 
 function MyShelvesScreen(props) {
@@ -40,7 +39,7 @@ function MyShelvesScreen(props) {
             <ScrollView style={{ backgroundColor: Colors.backgroundColor, flex: 1, width: '100%' }} >
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                     {/* Nav Icon and titles */}
-                    <NavTitlesAndIcon mainTitle="My Shelves" sideTitle="ADD" />
+                    <NavTitlesAndIcon mainTitle="My Spots" sideTitle="ADD" />
                 </View>
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                     {/*Top Buttons */}
