@@ -16,15 +16,18 @@ function DashboardScreen(props) {
     const data = [
         {
             number: '44',
-            text: 'Requests'
+            text: 'Requests',
+            color: '#708097'
         },
         {
             number: '44',
-            text: 'Spaces'
+            text: 'Spaces',
+            color: '#FF9072'
         },
         {
             number: '98400',
-            text: 'Payments'
+            text: 'Payments',
+            color: '#F5C03D'
         },
     ]
 
@@ -68,7 +71,7 @@ function DashboardScreen(props) {
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: "#F3F6F9" }}>
             {/* Image background */}
             <ImageBackground style={{ width: '100%', height: RFPercentage(40) }} source={require('../../assets/images/dashboard.png')}>
-                <View style={{ backgroundColor: "#F3F6F9", position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(6), borderTopLeftRadius: RFPercentage(3) }}>
+                <View style={{ backgroundColor: "#F3F6F9", position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(6), borderTopLeftRadius: RFPercentage(3), borderTopRightRadius: RFPercentage(3) }}>
                 </View>
                 {/* Icon */}
                 <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.5} style={{ marginLeft: RFPercentage(4), marginTop: RFPercentage(6) }}>
@@ -83,13 +86,13 @@ function DashboardScreen(props) {
             </ImageBackground>
 
             {/* White Boxes */}
-            <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', width: '95%' }}>
+            <View style={{ marginTop: RFPercentage(-2), flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center', width: '95%' }}>
                 {data.map((item, i) => (
-                    <View key={i} style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: Colors.white, width: RFPercentage(15), height: RFPercentage(15), borderRadius: RFPercentage(1.5) }}>
-                        <Text style={{ color: '#444640', fontSize: RFPercentage(2.8), fontFamily: 'Quicksand_700Bold' }}>
+                    <View key={i} style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: item.color, width: RFPercentage(15), height: RFPercentage(15), borderRadius: RFPercentage(1.5) }}>
+                        <Text style={{ color: Colors.white, fontSize: RFPercentage(2.8), fontFamily: 'Quicksand_700Bold' }}>
                             {item.number}
                         </Text>
-                        <Text style={{ marginTop: RFPercentage(2), color: '#717171', fontFamily: 'Quicksand_400Regular' }}>
+                        <Text style={{ marginTop: RFPercentage(2), color: Colors.white, fontFamily: 'Quicksand_400Regular' }}>
                             {item.text}
                         </Text>
                     </View>
