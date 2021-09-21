@@ -50,6 +50,7 @@ import CreateShelfStep2 from './app/screens/CreateShelfStep2';
 import CreateShelfStep3 from './app/screens/CreateShelfStep3';
 import ViewBookingScreen from './app/screens/ViewBookingScreen';
 import Payments from './app/screens/Payments';
+import RequestPayment from './app/screens/RequestPayment';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -99,6 +100,7 @@ export default function App() {
       <Stack.Navigator headerMode="none" initialRouteName="Payments">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Payments" component={Payments} />
+        <Stack.Screen name="RequestPayment" component={RequestPayment} />
         <Stack.Screen name="ViewBookingScreen" component={ViewBookingScreen} />
         <Stack.Screen name="CreateShelfStep1" component={CreateShelfStep1} />
         <Stack.Screen name="CreateShelfStep2" component={CreateShelfStep2} />

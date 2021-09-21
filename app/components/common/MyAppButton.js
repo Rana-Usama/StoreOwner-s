@@ -12,12 +12,16 @@ function MyAppButton({
   padding = RFPercentage(2),
   width = "100%",
   color,
+  borderWidth = null,
+  borderColor = null,
 }) {
   return (
     <TouchableOpacity
       onPress={onPress}
       style={{
         backgroundColor: backgroundColor,
+        borderColor: borderColor,
+        borderWidth: borderWidth,
         width: width,
         borderRadius: borderRadius,
         justifyContent: "center",
