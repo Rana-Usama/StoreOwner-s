@@ -28,15 +28,9 @@ import MyBookings from './app/screens/MyBookings';
 import NotificationScreen from './app/screens/NotificationScreen';
 import DashboardScreen from './app/screens/DashboardScreen';
 import CreateStoreScreen from './app/screens/CreateStoreScreen';
-import HomeScreen from './app/screens/HomeScreen';
-import ProfileScreen from './app/screens/ProfileScreen';
 import ChooseStore from './app/screens/ChooseStore';
 import Store1Screen from './app/screens/Store1Screen';
 import Store2Screen from './app/screens/Store2Screen';
-import Order1Screen from './app/screens/Order1Screen';
-import CartDetails2 from './app/screens/CartDetails2';
-import CalendarScreen from './app/screens/CalendarScreen';
-
 import AppDrawer from './app/components/common/AppDrawer';
 import MyProfileScreen from './app/screens/MyProfileScreen';
 import MyProfileEditScreen from './app/screens/MyProfileEditScreen';
@@ -69,35 +63,23 @@ export default function App() {
     Montserrat_700Bold,
   })
 
-  // screeen which have drawer icon
+  // screens which have drawer icon
   const HomeDrawer = () => {
     return <Drawer.Navigator initialRouteName="DashboardScreen" drawerType={"front"} overlayColor="transparent" edgeWidth={100} drawerStyle={{ backgroundColor: Colors.white, width: "75%" }} drawerContent={(props) => <AppDrawer {...props} />}  >
-      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
       <Drawer.Screen name="ChooseStore" component={ChooseStore} />
       <Drawer.Screen name="Store1Screen" component={Store1Screen} />
       <Drawer.Screen name="Store2Screen" component={Store2Screen} />
-      <Drawer.Screen name="Order1Screen" component={Order1Screen} />
-      <Drawer.Screen name="CartDetails2" component={CartDetails2} />
-      <Drawer.Screen name="CalendarScreen" component={CalendarScreen} />
+      <Drawer.Screen name="Payments" component={Payments} />
       <Drawer.Screen name="DashboardScreen" component={DashboardScreen} />
       <Drawer.Screen name="CreateStoreScreen" component={CreateStoreScreen} />
       <Drawer.Screen name="MyShelvesScreen" component={MyShelvesScreen} />
       <Drawer.Screen name="MyShelvesBookedScreen" component={MyShelvesBookedScreen} />
       <Drawer.Screen name="PaymentMethodScreen" component={PaymentMethodScreen} />
-<<<<<<< HEAD
-      <Stack.Screen name="TypeLocationScreen" component={TypeLocationScreen} />
-      <Stack.Screen name="ChooseLocation" component={ChooseLocation} />
-      <Stack.Screen name="PopUp" component={PopUp} />
-      <Stack.Screen name="ViewShelfEditScreen" component={ViewShelfEditScreen} />
-      <Stack.Screen name="MyStoresScreen" component={MyStoresScreen} />
-      <Stack.Screen name="Payments" component={Payments} />
-=======
       <Drawer.Screen name="TypeLocationScreen" component={TypeLocationScreen} />
       <Drawer.Screen name="ChooseLocation" component={ChooseLocation} />
       <Drawer.Screen name="PopUp" component={PopUp} />
       <Drawer.Screen name="ViewShelfEditScreen" component={ViewShelfEditScreen} />
       <Drawer.Screen name="MyStoresScreen" component={MyStoresScreen} />
->>>>>>> 003652862daa5f69a9ec19d511e640284bbb138d
     </Drawer.Navigator>
   }
 
@@ -117,7 +99,6 @@ export default function App() {
         <Stack.Screen name="CreateShelfStep3" component={CreateShelfStep3} />
         <Stack.Screen name="MyProfileEditScreen" component={MyProfileEditScreen} />
         <Stack.Screen name="MyProfileScreen" component={MyProfileScreen} />
-        <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="HomeDrawer" component={HomeDrawer} />

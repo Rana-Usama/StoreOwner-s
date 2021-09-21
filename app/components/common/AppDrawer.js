@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Divider } from "react-native-paper";
-import { Dimensions, Image, Platform, Text, TouchableOpacity, View } from "react-native";
+import { Dimensions, Image, Platform, Text, TouchableOpacity, View, ImageBackground } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { AntDesign } from "@expo/vector-icons"
 
+//config
 import Colors from "../../config/Colors";
 
 // images
@@ -50,13 +51,11 @@ function AppDrawer({ navigation }) {
     ]
 
     return (
-        <View style={{ flex: 1, backgroundColor: "#f5f5f5" }} >
-            {/* <Image style={{ position: 'absolute', top: 0, left: 0 }} source={require('../../../assets/images/whitetop.png')} />
-            <Image style={{ position: 'absolute', bottom: 0, left: 0 }} source={require('../../../assets/images/whitebottom.png')} /> */}
+        <ImageBackground style={{ flex: 1, width: '100%' }} source={require('../../../assets/images/dashback.png')} >
 
             <View style={{ justifyContent: "center", alignItems: 'center', width: "90%", height: RFPercentage(15), flexDirection: 'row', padding: RFPercentage(2.4), marginTop: RFPercentage(3) }} >
                 <View style={{ width: "45%", justifyContent: 'center', alignItems: 'center' }} >
-                    <Image height={RFPercentage(10)} width={RFPercentage(12)} style={{ width: RFPercentage(13), height: RFPercentage(10) }} source={logoWhite} />
+                    <Image height={RFPercentage(10)} width={RFPercentage(12)} style={{ width: RFPercentage(14), height: RFPercentage(10) }} source={logoWhite} />
                 </View>
             </View>
 
@@ -98,7 +97,7 @@ function AppDrawer({ navigation }) {
                 </View>
             </View>
 
-        </View >
+        </ImageBackground >
     );
 }
 

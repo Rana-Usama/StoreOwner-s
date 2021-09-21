@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ImageBackground, Image, TouchableOpacity, View, Text, ScrollView, KeyboardAvoidingView } from 'react-native'
 import { RFPercentage } from 'react-native-responsive-fontsize';
+import { Entypo } from '@expo/vector-icons';
 
 //components
 import Screen from '../components/Screen';
@@ -12,12 +13,27 @@ import LoadingModal from '../components/common/LoadingModel';
 
 //config
 import Colors from '../config/Colors';
+import { TextInput } from 'react-native-gesture-handler';
 
 function CreateShelfStep1(props) {
 
     const [bottomTab, setBottomTab] = useState(true);
-    // const [model, setModel] = useState(false);
     const [indicator, showIndicator] = useState(false);
+
+    // const [smallInputFields, setSmallInputFields] = useState([
+    //     {
+    //         placeholder: 'Width',
+    //         value: ""
+    //     },
+    //     {
+    //         placeholder: 'Length',
+    //         value: ""
+    //     },
+    //     {
+    //         placeholder: 'Height',
+    //         value: ""
+    //     },
+    // ])
 
     const [inputField, SetInputField] = useState([
         {
@@ -45,13 +61,17 @@ function CreateShelfStep1(props) {
             value: "",
         },
         {
+            placeholder: "Select Rental Period",
+            dropdownIcon: true,
+            value: "",
+        },
+        {
             placeholder: "Select Available Space",
             dropdownIcon: true,
             value: "",
         },
         {
             placeholder: "Enter Space Price",
-            dropdownIcon: true,
             value: "",
         },
     ]);
@@ -118,26 +138,45 @@ function CreateShelfStep1(props) {
                         {inputField.map((item, i) => (
                             <View key={i} style={{ marginTop: RFPercentage(2) }} >
                                 <Text style={{ fontSize: RFPercentage(2.2), marginBottom: i === 3 ? RFPercentage(2) : RFPercentage(-2), color: '#82867D', fontFamily: 'Quicksand_700Bold', marginLeft: RFPercentage(2) }}>{item.title}</Text>
-                                <InputField
-                                    placeholder={item.placeholder}
-                                    backgroundColor={Colors.background}
-                                    borderColor={Colors.background}
-                                    height={RFPercentage(7.3)}
-                                    fontSize={RFPercentage(2)}
-                                    onTouchStart={() => setBottomTab(false)}
-                                    onTouchEnd={() => setBottomTab(true)}
-                                    placeholderColor={'#82867D'}
-                                    fontFamily={'Quicksand_400Regular'}
-                                    dropdownIcon={item.dropdownIcon}
-                                    borderRadius={RFPercentage(20)}
-                                    handleFeild={(text) => handleChange(text, i)}
-                                    value={item.value}
-                                    width={"90%"}
-                                />
+                                {i === 4 ?
+                                    <View style={{ flexDirection: 'row', width: '80%', justifyContent: 'center', alignItems: 'center' }}>
+                                        <View style={{ borderRadius: RFPercentage(2), alignItems: 'center', width: '30%', flexDirection: 'row', backgroundColor: '#F7F7F7', height: RFPercentage(8) }}>
+                                            <TextInput placeholder="width" style={{ marginLeft: RFPercentage(2) }} />
+                                            <Entypo style={{ position: 'absolute', right: RFPercentage(1), fontSize: RFPercentage(3) }} name="select-arrows" color={Colors.circle} />
+                                        </View>
+                                        <View style={{ marginLeft: RFPercentage(2), borderRadius: RFPercentage(2), alignItems: 'center', width: '30%', flexDirection: 'row', backgroundColor: '#F7F7F7', height: RFPercentage(8) }}>
+                                            <TextInput placeholder="Length" style={{ marginLeft: RFPercentage(2) }} />
+                                            <Entypo style={{ position: 'absolute', right: RFPercentage(1), fontSize: RFPercentage(3) }} name="select-arrows" color={Colors.circle} />
+                                        </View>
+                                        <View style={{ marginLeft: RFPercentage(2), borderRadius: RFPercentage(2), alignItems: 'center', width: '30%', flexDirection: 'row', backgroundColor: '#F7F7F7', height: RFPercentage(8) }}>
+                                            <TextInput placeholder="Height" style={{ marginLeft: RFPercentage(2) }} />
+                                            <Entypo style={{ position: 'absolute', right: RFPercentage(1), fontSize: RFPercentage(3) }} name="select-arrows" color={Colors.circle} />
+                                        </View>
+                                    </View> :
+                                    <InputField
+                                        placeholder={item.placeholder}
+                                        backgroundColor={Colors.background}
+                                        borderColor={Colors.background}
+                                        height={RFPercentage(7.3)}
+                                        fontSize={RFPercentage(2)}
+                                        onTouchStart={() => setBottomTab(false)}
+                                        onTouchEnd={() => setBottomTab(true)}
+                                        placeholderColor={'#82867D'}
+                                        fontFamily={'Quicksand_400Regular'}
+                                        dropdownIcon={item.dropdownIcon}
+                                        borderRadius={RFPercentage(20)}
+                                        handleFeild={(text) => handleChange(text, i)}
+                                        value={item.value}
+                                        width={"90%"}
+                                    />
+                                }
                             </View>
                         ))}
                     </View>
+
                 </KeyboardAvoidingView>
+
+
                 {/* Create profile button */}
                 <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(5), marginBottom: RFPercentage(25) }}>
                     <MyAppButton

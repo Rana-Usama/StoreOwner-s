@@ -46,6 +46,8 @@ function CreateShelfStep2(props) {
     const uploadImages = async (imageSelecor) => {
         try {
             await ImagePicker.requestMediaLibraryPermissionsAsync();
+            await ImagePicker.requestCameraPermissionsAsync()
+            await ImagePicker.getCameraPermissionsAsync()
             let permissionResult = await ImagePicker.getMediaLibraryPermissionsAsync();
 
             if (permissionResult.granted === false) {

@@ -159,11 +159,7 @@ function ViewShelfEditScreen(props) {
                         {/* input fields */}
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
                             <View style={{ width: '100%', alignItems: "center", marginTop: RFPercentage(4) }}>
-
-
-
                                 {inputField.map((item, i) => (
-
                                     <View key={i} style={{ marginTop: RFPercentage(2) }} >
                                         <Text style={{ fontFamily: 'Quicksand_500Medium', color: "#82867D", fontWeight: 'bold', fontSize: RFPercentage(2.5), bottom: RFPercentage(0.5) }}>{item.title}</Text>
                                         {i === 1 ? <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: "row", width: "86%", height: RFPercentage(6.8), backgroundColor: Colors.white, borderRadius: RFPercentage(1) }}>
