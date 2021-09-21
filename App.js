@@ -27,7 +27,7 @@ import ViewShelfEditScreen from './app/screens/ViewShelfEditScreen';
 import MyBookings from './app/screens/MyBookings';
 import NotificationScreen from './app/screens/NotificationScreen';
 import DashboardScreen from './app/screens/DashboardScreen';
-import BuyerProfileScreen from './app/screens/BuyerProfileScreen';
+import CreateStoreScreen from './app/screens/CreateStoreScreen';
 import HomeScreen from './app/screens/HomeScreen';
 import ProfileScreen from './app/screens/ProfileScreen';
 import ChooseStore from './app/screens/ChooseStore';
@@ -69,7 +69,7 @@ export default function App() {
       <Drawer.Screen name="CartDetails2" component={CartDetails2} />
       <Drawer.Screen name="CalendarScreen" component={CalendarScreen} />
       <Drawer.Screen name="DashboardScreen" component={DashboardScreen} />
-      <Drawer.Screen name="BuyerProfileScreen" component={BuyerProfileScreen} />
+      <Drawer.Screen name="CreateStoreScreen" component={CreateStoreScreen} />
       <Drawer.Screen name="MyShelvesScreen" component={MyShelvesScreen} />
       <Drawer.Screen name="MyShelvesBookedScreen" component={MyShelvesBookedScreen} />
       <Drawer.Screen name="PaymentMethodScreen" component={PaymentMethodScreen} />

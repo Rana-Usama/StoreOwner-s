@@ -214,7 +214,7 @@ function ViewShelfEditScreen(props) {
                 </ScrollView>
             </Screen>
             {bottomTab ?
-                <BottomTab onPressFirstIcon={() => props.navigation.navigate("BuyerProfileScreen")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} /> :
+                <BottomTab onPressFirstIcon={() => props.navigation.navigate("CreateStoreScreen")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} /> :
                 null
             }
 

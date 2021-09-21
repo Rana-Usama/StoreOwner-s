@@ -4,17 +4,17 @@ import { RFPercentage } from 'react-native-responsive-fontsize';
 import { AntDesign } from '@expo/vector-icons';
 
 //components
-import Screen from './../components/Screen';
+import Screen from '../components/Screen';
 import InputField from '../components/common/InputField';
 import BottomTab from '../components/common/BottomTab';
 import MyAppButton from '../components/common/MyAppButton';
 import ImageAddingComponent from '../components/common/ImageAddingComponent';
-import LoadingModal from './../components/common/LoadingModel';
+import LoadingModal from '../components/common/LoadingModel';
 
 //config
 import Colors from '../config/Colors';
 
-function BuyerProfileScreen(props) {
+function CreateStoreScreen(props) {
 
     const [bottomTab, setBottomTab] = useState(true)
     const [indicator, showIndicator] = useState(false);
@@ -28,7 +28,7 @@ function BuyerProfileScreen(props) {
             value: "",
         },
         {
-            placeholder: "Business category",
+            placeholder: "Select Store category",
             dropdownIcon: true,
             value: "",
         },
@@ -74,12 +74,12 @@ function BuyerProfileScreen(props) {
                 </TouchableOpacity>
                 {/*Image Heading */}
                 <Text style={{ fontWeight: 'bold', color: Colors.white, bottom: RFPercentage(2.3), fontSize: RFPercentage(2.7) }}>
-                    Create Profile
+                    Add Store
                 </Text>
             </ImageBackground>
             {/* Central heading */}
             <Text style={{ color: '#313942', fontSize: RFPercentage(2.3), marginTop: RFPercentage(1.5), fontFamily: 'Montserrat_500Medium' }}>
-                BUSINESS INFORMATION
+                STORE INFORMATION
             </Text>
 
             {/* ScrollView */}
@@ -141,4 +141,4 @@ function BuyerProfileScreen(props) {
     );
 }
 
-export default BuyerProfileScreen;
+export default CreateStoreScreen;
