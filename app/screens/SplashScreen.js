@@ -9,8 +9,9 @@ import Screen from "../components/Screen";
 import Colors from "../config/Colors";
 
 // images
-import oval1 from "../../assets/images/Illustration.png"
+import oval1 from "../../assets/images/illustration.png"
 import oval2 from "../../assets/images/Oval.png"
+import oval3 from "../../assets/images/oval3.png"
 
 function SplashScreen(props) {
 
@@ -20,20 +21,20 @@ function SplashScreen(props) {
         {
             id: 0,
             image: oval1,
-            title: 'Prime Spots',
-            subHeading: 'Give your products great visibility on RetailSpot',
+            title: 'Make Extra Money',
+            subHeading: 'Make some money from renting spaces on RetailPro',
         },
         {
             id: 1,
             image: oval2,
-            title: 'Great Locations',
-            subHeading: 'Display on the shelves of top retail shops',
+            title: 'Sell Variety',
+            subHeading: 'Earn more selling diverse product lines',
         },
         {
             id: 2,
-            image: oval2,
-            title: 'Offers & Discounts',
-            subHeading: 'Get discounted rates on the spots you have always wanted',
+            image: oval3,
+            title: 'Make more money',
+            subHeading: 'Offer in-store services and earn more money.',
         }
     ]
 
