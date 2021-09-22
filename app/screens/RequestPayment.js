@@ -144,7 +144,7 @@ function RequestPayment(props) {
             {/* Popup upon confriming transaction */}
             <PopUp title="Withdrawal Request was succesful" buttonTitle="Continue" showModel={secondModel} onPress={() => { props.navigation.navigate("Payments"), setSecondModel(false) }} />
             {/* Bottom tab */}
-            <BottomTab />
+            <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
         </Screen>
 
     );

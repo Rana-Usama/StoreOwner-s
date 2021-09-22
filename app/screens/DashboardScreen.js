@@ -120,7 +120,7 @@ function DashboardScreen(props) {
                 </View>
             </ScrollView>
             {/* Bottom tab */}
-            <BottomTab />
+            <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
         </Screen>
     );
 }

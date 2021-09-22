@@ -141,7 +141,7 @@ function CreateShelfStep3(props) {
             {bottomTab ?
                 <View style={{ position: 'absolute', width: '100%', bottom: 0 }}>
                     {/* Bottom Tab */}
-                    <BottomTab />
+                    <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
                 </View> :
                 null
             }

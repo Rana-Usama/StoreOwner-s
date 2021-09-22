@@ -8,7 +8,6 @@ import Screen from '../components/Screen';
 import InputField from '../components/common/InputField';
 import BottomTab from '../components/common/BottomTab';
 import MyAppButton from '../components/common/MyAppButton';
-import ImageAddingComponent from '../components/common/ImageAddingComponent';
 import LoadingModal from '../components/common/LoadingModel';
 
 //config
@@ -192,12 +191,10 @@ function CreateShelfStep1(props) {
             {bottomTab ?
                 <View style={{ position: 'absolute', width: '100%', bottom: 0 }}>
                     {/* Bottom Tab */}
-                    <BottomTab />
+                    <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
                 </View> :
                 null
             }
-
-
             {/* <PopUp title="Your paymet has been confirmed. You can check the details for departure. " buttonTitle="Continue" showModel={model} onPress={() => { props.navigation.navigate("MyStoresScreen"), setModel(false) }} /> */}
         </Screen>
     );

@@ -13,6 +13,7 @@ import LoadingModal from '../components/common/LoadingModel';
 //config
 import Colors from '../config/Colors';
 import ImageAddingComponent from '../components/common/ImageAddingComponent';
+import NotificationScreen from './NotificationScreen';
 
 const { height } = Dimensions.get("window");
 
@@ -146,7 +147,7 @@ function CreateShelfStep2(props) {
             {bottomTab ?
                 <View style={{ position: 'absolute', width: '100%', bottom: 0 }}>
                     {/* Bottom Tab */}
-                    <BottomTab />
+                    <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
                 </View> :
                 null
             }
