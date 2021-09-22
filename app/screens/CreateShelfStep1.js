@@ -19,20 +19,6 @@ function CreateShelfStep1(props) {
     const [bottomTab, setBottomTab] = useState(true);
     const [indicator, showIndicator] = useState(false);
 
-    // const [smallInputFields, setSmallInputFields] = useState([
-    //     {
-    //         placeholder: 'Width',
-    //         value: ""
-    //     },
-    //     {
-    //         placeholder: 'Length',
-    //         value: ""
-    //     },
-    //     {
-    //         placeholder: 'Height',
-    //         value: ""
-    //     },
-    // ])
 
     const [inputField, SetInputField] = useState([
         {
@@ -82,14 +68,14 @@ function CreateShelfStep1(props) {
     };
 
     const handleLogin = () => {
-        // showIndicator(true);
-        // let tempfeilds = [...inputField];
+        showIndicator(true);
+        let tempfeilds = [...inputField];
 
-        // if (tempfeilds[0].value === "" || tempfeilds[2].value === "") {
-        //     alert("Please fill all the feilds !");
-        //     showIndicator(false);
-        //     return true;
-        // }
+        if (tempfeilds[0].value === "" || tempfeilds[2].value === "") {
+            alert("Please fill all the feilds !");
+            showIndicator(false);
+            return true;
+        }
         props.navigation.navigate("CreateShelfStep2")
         // setModel(true);
 
@@ -105,33 +91,33 @@ function CreateShelfStep1(props) {
 
 
     return (
-        <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: Colors.white }}>
-            <LoadingModal show={indicator} />
-            {/* Top Image */}
-            <ImageBackground style={{ justifyContent: 'center', alignItems: 'center', width: '100%', height: RFPercentage(25) }} source={require('../../assets/images/buyer.png')}>
-                <View style={{ backgroundColor: Colors.white, position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(4), borderTopLeftRadius: RFPercentage(5), borderTopRightRadius: RFPercentage(5) }}>
-                </View>
-                {/* Icon */}
-                <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(8), left: RFPercentage(4) }}>
-                    <Image source={require('../../assets/images/notiDash.png')} />
-                </TouchableOpacity>
-                {/*Image Heading */}
-                <Text style={{ fontWeight: 'bold', color: Colors.white, bottom: RFPercentage(2.3), fontSize: RFPercentage(2.7) }}>
-                    Create Spot
+        <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={{ flex: 1 }}
+        >
+            <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: Colors.white }}>
+                <LoadingModal show={indicator} />
+                {/* Top Image */}
+                <ImageBackground style={{ justifyContent: 'center', alignItems: 'center', width: '100%', height: RFPercentage(25) }} source={require('../../assets/images/buyer.png')}>
+                    <View style={{ backgroundColor: Colors.white, position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(4), borderTopLeftRadius: RFPercentage(5), borderTopRightRadius: RFPercentage(5) }}>
+                    </View>
+                    {/* Icon */}
+                    <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(8), left: RFPercentage(4) }}>
+                        <Image source={require('../../assets/images/notiDash.png')} />
+                    </TouchableOpacity>
+                    {/*Image Heading */}
+                    <Text style={{ fontWeight: 'bold', color: Colors.white, bottom: RFPercentage(2.3), fontSize: RFPercentage(2.7) }}>
+                        Create Spot
+                    </Text>
+                </ImageBackground>
+                {/* Central heading */}
+                <Text style={{ color: '#313942', fontSize: RFPercentage(2.3), marginTop: RFPercentage(1.5), fontFamily: 'Montserrat_500Medium' }}>
+                    SPOT INFORMATION
                 </Text>
-            </ImageBackground>
-            {/* Central heading */}
-            <Text style={{ color: '#313942', fontSize: RFPercentage(2.3), marginTop: RFPercentage(1.5), fontFamily: 'Montserrat_500Medium' }}>
-                SPOT INFORMATION
-            </Text>
 
-            {/* ScrollView */}
-            <ScrollView style={{ backgroundColor: Colors.white, flex: 1, width: '100%' }} >
+                {/* ScrollView */}
+                <ScrollView style={{ backgroundColor: Colors.white, flex: 1, width: '100%' }} >
 
-                <KeyboardAvoidingView
-                    behavior={Platform.OS === "ios" ? "padding" : "height"}
-                    style={{ flex: 1 }}
-                >
                     {/* Input Fields */}
                     <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', marginTop: RFPercentage(4) }}>
                         {inputField.map((item, i) => (
@@ -172,31 +158,28 @@ function CreateShelfStep1(props) {
                             </View>
                         ))}
                     </View>
-
-                </KeyboardAvoidingView>
-
-
-                {/* Create profile button */}
-                <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(5), marginBottom: RFPercentage(25) }}>
-                    <MyAppButton
-                        title="Continue"
-                        bold={false}
-                        onPress={() => handleLogin()}
-                        backgroundColor={"#FD6721"}
-                        color={Colors.white}
-                        width={"90%"}
-                    />
-                </View>
-            </ScrollView>
-            {bottomTab ?
-                <View style={{ position: 'absolute', width: '100%', bottom: 0 }}>
-                    {/* Bottom Tab */}
-                    <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
-                </View> :
-                null
-            }
-            {/* <PopUp title="Your paymet has been confirmed. You can check the details for departure. " buttonTitle="Continue" showModel={model} onPress={() => { props.navigation.navigate("MyStoresScreen"), setModel(false) }} /> */}
-        </Screen>
+                    {/* Create profile button */}
+                    <View style={{ width: "100%", alignItems: "center", marginTop: RFPercentage(2), marginBottom: RFPercentage(18) }}>
+                        <MyAppButton
+                            title="Continue"
+                            bold={false}
+                            onPress={() => handleLogin()}
+                            backgroundColor={"#FD6721"}
+                            color={Colors.white}
+                            width={"90%"}
+                        />
+                    </View>
+                </ScrollView>
+                {bottomTab ?
+                    <View style={{ position: 'absolute', width: '100%', bottom: 0 }}>
+                        {/* Bottom Tab */}
+                        <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
+                    </View> :
+                    null
+                }
+                {/* <PopUp title="Your paymet has been confirmed. You can check the details for departure. " buttonTitle="Continue" showModel={model} onPress={() => { props.navigation.navigate("MyStoresScreen"), setModel(false) }} /> */}
+            </Screen>
+        </KeyboardAvoidingView>
     );
 }
 

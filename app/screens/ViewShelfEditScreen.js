@@ -84,13 +84,13 @@ function ViewShelfEditScreen(props) {
 
     const handleLogin = () => {
         showIndicator(true);
-        // let tempfeilds = [...inputField];
+        let tempfeilds = [...inputField];
 
-        // if (tempfeilds[0].value === "" || tempfeilds[1].value === "" || tempfeilds[2].value === "" || tempfeilds[3].value === "" || tempfeilds[4].value === "" || tempfeilds[5].value === "") {
-        //     alert("Please fill all the feilds !");
-        //     showIndicator(false);
-        //     return true;
-        // }
+        if (tempfeilds[0].value === "" || tempfeilds[1].value === "" || tempfeilds[2].value === "" || tempfeilds[3].value === "" || tempfeilds[4].value === "" || tempfeilds[5].value === "") {
+            alert("Please fill all the feilds !");
+            showIndicator(false);
+            return true;
+        }
         setModel(true);
 
         try {

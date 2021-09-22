@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import Screen from '../components/Screen';
 import { ImageBackground, View, TouchableOpacity, Text, Image, KeyboardAvoidingView, ScrollView } from 'react-native';
 import { RFPercentage } from 'react-native-responsive-fontsize';
+
+//components
 import InputField from '../components/common/InputField';
+//config
 import Colors from '../config/Colors';
-import BottomTab from '../components/common/BottomTab';
+
 
 function MyProfileEditScreen(props) {
 

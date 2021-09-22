@@ -28,7 +28,6 @@ import MyBookings from './app/screens/MyBookings';
 import NotificationScreen from './app/screens/NotificationScreen';
 import DashboardScreen from './app/screens/DashboardScreen';
 import CreateStoreScreen from './app/screens/CreateStoreScreen';
-import ChooseStore from './app/screens/ChooseStore';
 import Store1Screen from './app/screens/Store1Screen';
 import Store2Screen from './app/screens/Store2Screen';
 import AppDrawer from './app/components/common/AppDrawer';
@@ -66,7 +65,6 @@ export default function App() {
   // screens which have drawer icon
   const HomeDrawer = () => {
     return <Drawer.Navigator initialRouteName="DashboardScreen" drawerType={"front"} overlayColor="transparent" edgeWidth={100} drawerStyle={{ backgroundColor: Colors.white, width: "75%" }} drawerContent={(props) => <AppDrawer {...props} />}  >
-      <Drawer.Screen name="ChooseStore" component={ChooseStore} />
       <Drawer.Screen name="Store1Screen" component={Store1Screen} />
       <Drawer.Screen name="Store2Screen" component={Store2Screen} />
       <Drawer.Screen name="Payments" component={Payments} />
@@ -89,7 +87,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="HomeDrawer">
+      <Stack.Navigator headerMode="none" initialRouteName="SplashScreen">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="BankInformation" component={BankInformation} />
         <Stack.Screen name="RequestPayment" component={RequestPayment} />
