@@ -53,7 +53,7 @@ function ChooseLocation(props) {
                         placeholder={'Search for spot…'}
                         placeholderColor={Colors.grey}
                         // onTouchStart={() => props.navigation.navigate('ChooseStore')}
-                        width={"90%"}
+                        width={"100%"}
                         handleFeild={() => null}
                         backgroundColor={Colors.grey1}
                         fontSize={RFPercentage(2.2)}

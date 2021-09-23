@@ -27,7 +27,7 @@ function WelcomeScreen(props) {
                     title="CONTINUE"
                     padding={RFPercentage(2.5)}
                     bold={false}
-                    onPress={() => props.navigation.navigate("HomeScreen")}
+                    onPress={() => props.navigation.navigate("DashboardScreen")}
                     backgroundColor={Colors.primary}
                     color={Colors.white}
                     width={"98%"}

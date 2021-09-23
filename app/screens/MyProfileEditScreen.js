@@ -60,7 +60,7 @@ function MyProfileEditScreen(props) {
                 <ImageBackground style={{ justifyContent: 'center', alignItems: 'center', width: '100%', height: RFPercentage(30) }} source={require('../../assets/images/whitepic.png')}>
                     <View style={{ backgroundColor: '#FAFAFA', position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(4), borderTopLeftRadius: RFPercentage(15), borderTopRightRadius: RFPercentage(15) }}>
                     </View>
-                    <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(5.2), left: RFPercentage(4) }}>
+                    <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.5} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(4) }}>
                         <Image source={require('../../assets/images/profileicon.png')} />
                     </TouchableOpacity>
                 </ImageBackground>

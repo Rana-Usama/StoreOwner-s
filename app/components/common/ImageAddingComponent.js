@@ -8,10 +8,10 @@ function ImageAddingComponent({ threeBoxes = false, title1, title2, marginTop = 
     return (
         <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
             <View style={{ justifyContent: 'center', alignItems: 'flex-start', width: '75%', marginTop: marginTop }}>
-                <Text style={{ color: '#82867D', fontFamily: 'Quicksand_700Bold', fontSize: RFPercentage(2.5) }}>
+                <Text style={{ color: '#82867D', fontFamily: 'Quicksand_700Bold', fontSize: RFPercentage(2.3) }}>
                     {title1}
                 </Text>
-                <Text style={{ color: '#82867D', fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(2.1), marginTop: RFPercentage(0.1) }}>
+                <Text style={{ color: '#82867D', fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(2), marginTop: RFPercentage(0.1) }}>
                     {title2}
                 </Text>
                 {/* Image adding Box */}

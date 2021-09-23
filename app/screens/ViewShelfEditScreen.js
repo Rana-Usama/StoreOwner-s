@@ -112,27 +112,27 @@ function ViewShelfEditScreen(props) {
         >
 
             <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: Colors.background }}>
-                <ScrollView style={{ backgroundColor: Colors.backgroundColor, flex: 1, width: '100%' }} >
-                    <View style={{ justifyContent: 'center', alignItems: 'center' }}  >
-                        <LoadingModal show={indicator} />
-                        {/* Nav Icon and titles */}
-                        <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                            <NavTitlesAndIcon mainTitle="View Shelf" sideTitle="ADD" icon={true} />
+                <LoadingModal show={indicator} />
+                {/* Nav Icon and titles */}
+                <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                    <NavTitlesAndIcon onPressBackIcon={() => props.navigation.navigate("MyShelvesScreen")} mainTitle="View Shelf" sideTitle="ADD" icon={true} />
+                </View>
+                {/* Image Title */}
+                <ScrollView style={{ backgroundColor: Colors.backgroundColor, flex: 1, width: '100%', marginTop: RFPercentage(5) }} >
+                    <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                        <Text style={{ fontFamily: 'Quicksand_400Regular', marginTop: RFPercentage(7), color: "#313942", fontSize: RFPercentage(2.3) }}>
+                            Prime Spot
+                        </Text>
+                        <View style={{ position: 'absolute', right: 0, top: RFPercentage(6.5), right: RFPercentage(5) }}>
+                            <Switch
+                                trackColor={{ false: "#767577", true: Colors.primary }}
+                                thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+                                ios_backgroundColor="#3e3e3e"
+                                onValueChange={toggleSwitch}
+                                value={isEnabled}
+                            />
                         </View>
-                        {/* Image Title */}
-                        <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                            <Text style={{ fontFamily: 'Quicksand_400Regular', marginTop: RFPercentage(7), color: "#313942", fontSize: RFPercentage(2.3) }}>
-                                Prime Spot
-                            </Text>
-                            <View style={{ position: 'absolute', right: 0, top: RFPercentage(6.5), right: RFPercentage(5) }}>
-                                <Switch
-                                    trackColor={{ false: "#767577", true: Colors.primary }}
-                                    thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
-                                    ios_backgroundColor="#3e3e3e"
-                                    onValueChange={toggleSwitch}
-                                    value={isEnabled}
-                                />
-                            </View>
+                        <View style={{ justifyContent: 'center', alignItems: 'center' }}  >
                         </View>
                         {/* Main Image */}
                         <View style={{ justifyContent: 'center', alignItems: 'center', width: '90%' }}>
@@ -161,7 +161,7 @@ function ViewShelfEditScreen(props) {
                             <View style={{ width: '100%', alignItems: "center", marginTop: RFPercentage(4) }}>
                                 {inputField.map((item, i) => (
                                     <View key={i} style={{ marginTop: RFPercentage(2) }} >
-                                        <Text style={{ fontFamily: 'Quicksand_500Medium', color: "#82867D", fontWeight: 'bold', fontSize: RFPercentage(2.5), bottom: RFPercentage(0.5) }}>{item.title}</Text>
+                                        <Text style={{ fontFamily: 'Quicksand_500Medium', color: "#82867D", fontWeight: 'bold', fontSize: RFPercentage(2.2), bottom: RFPercentage(0.5) }}>{item.title}</Text>
                                         {i === 1 ? <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: "row", width: "86%", height: RFPercentage(6.8), backgroundColor: Colors.white, borderRadius: RFPercentage(1) }}>
                                             <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', flexDirection: "row" }}>
                                                 <Text style={{ color: Colors.circle, fontSize: RFPercentage(2), fontFamily: 'Quicksand_400Regular' }}>
@@ -223,7 +223,7 @@ function ViewShelfEditScreen(props) {
                                 width={"90%"}
                             />
                             <TouchableOpacity>
-                                <Text style={{ fontSize: RFPercentage(2.5), marginTop: RFPercentage(3), color: '#82867D', fontFamily: 'Montserrat_500Medium' }}>Delete</Text>
+                                <Text style={{ fontSize: RFPercentage(2.3), marginTop: RFPercentage(3), color: '#82867D', fontFamily: 'Montserrat_500Medium' }}>Delete</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -232,7 +232,7 @@ function ViewShelfEditScreen(props) {
 
             </Screen>
             {bottomTab ?
-                <BottomTab onPressFirstIcon={() => props.navigation.navigate("CreateStoreScreen")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} /> :
+                <BottomTab onPressFirstIcon={() => props.navigation.navigate("MyShelvesScreen")} onPressCenterIcon={() => props.navigation.navigate("CreateShelfStep1")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} /> :
                 null
             }
 

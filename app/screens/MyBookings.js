@@ -55,15 +55,15 @@ function MyBookings(props) {
     return (
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: Colors.background }}>
 
+            {/* Nav Icon and titles */}
+            <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                <NavTitlesAndIcon onPressBackIcon={() => props.navigation.navigate("DashboardScreen")} onPressSideText={() => props.navigation.navigate("CreateShelfStep1")} mainTitle="My Bookings" sideTitle="ADD" />
+            </View>
+            {/* Top Buttons */}
+            <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                <TwoButtonsContainer onPressButton2={() => props.navigation.navigate("MyShelvesScreen")} buttonTitle1="On-going" buttonTitle2="All" />
+            </View>
             <ScrollView style={{ backgroundColor: Colors.backgroundColor, flex: 1, width: '100%' }} >
-                {/* Nav Icon and titles */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                    <NavTitlesAndIcon mainTitle="My Bookings" sideTitle="Book" />
-                </View>
-                {/* Top Buttons */}
-                <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                    <TwoButtonsContainer onPressButton2={() => props.navigation.navigate("MyShelvesBookedScreen")} buttonTitle1="On-going" buttonTitle2="All" />
-                </View>
                 {/* Notifications Listings */}
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%', top: RFPercentage(3), marginBottom: RFPercentage(28) }}>
                     {data.map((item, i) => (
@@ -73,7 +73,7 @@ function MyBookings(props) {
             </ScrollView>
 
             {/* Bottom tab */}
-            <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
+            <BottomTab onPressFirstIcon={() => props.navigation.navigate("MyShelvesScreen")} onPressCenterIcon={() => props.navigation.navigate("CreateShelfStep1")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
         </Screen>
 
     );

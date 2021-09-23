@@ -37,14 +37,14 @@ function MyProfileScreen(props) {
             <ImageBackground style={{ justifyContent: 'center', alignItems: 'center', width: '100%', height: RFPercentage(30) }} source={require('../../assets/images/whitepic.png')}>
                 <View style={{ backgroundColor: '#FAFAFA', position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(4), borderTopLeftRadius: RFPercentage(15), borderTopRightRadius: RFPercentage(15) }}>
                 </View>
-                <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(5.2), left: RFPercentage(4) }}>
+                <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.5} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(4) }}>
                     <Image source={require('../../assets/images/profileicon.png')} />
                 </TouchableOpacity>
             </ImageBackground>
             {/* profile pic */}
             <Image style={{ marginTop: RFPercentage(-20) }} source={require('../../assets/images/man.png')} />
             {/* name */}
-            <Text style={{ fontFamily: 'Montserrat_500Medium', fontSize: RFPercentage(2.8), color: '#313942', marginTop: RFPercentage(4) }}>CHIBUEZE OZOEMENA</Text>
+            <Text style={{ fontFamily: 'Montserrat_500Medium', fontSize: RFPercentage(2.5), color: '#313942', marginTop: RFPercentage(4) }}>CHIBUEZE OZOEMENA</Text>
             {/* detail boxes */}
             <ScrollView style={{ backgroundColor: Colors.backgroundColor, flex: 1, width: '100%' }} >
                 <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
@@ -55,7 +55,7 @@ function MyProfileScreen(props) {
                                 Phone Number
                             </Text>
                         </View>
-                        <Text style={{ marginLeft: RFPercentage(9.5), marginTop: RFPercentage(1.5), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.5) }}>
+                        <Text style={{ marginLeft: RFPercentage(9.5), marginTop: RFPercentage(1.5), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.3) }}>
                             0817 000 0560
                         </Text>
                     </View>
@@ -66,7 +66,7 @@ function MyProfileScreen(props) {
                                 Mail
                             </Text>
                         </View>
-                        <Text style={{ marginLeft: RFPercentage(9.5), marginTop: RFPercentage(1.5), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.5) }}>
+                        <Text style={{ marginLeft: RFPercentage(9.5), marginTop: RFPercentage(1.5), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>
                             chibueze@gmail.com
                         </Text>
                     </View>
@@ -75,7 +75,7 @@ function MyProfileScreen(props) {
                     <TouchableOpacity onPress={() => props.navigation.navigate("MyProfileEditScreen")} style={{ justifyContent: 'center', marginTop: RFPercentage(3), width: '86%', height: RFPercentage(8), backgroundColor: "#ffff", borderRadius: RFPercentage(2.5) }}>
                         <View style={{ alignItems: 'center', flexDirection: 'row', marginLeft: RFPercentage(4) }}>
                             <Image source={require('../../assets/images/info.png')} />
-                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>
+                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2) }}>
                                 Change Infomation
                             </Text>
                         </View>
@@ -83,7 +83,7 @@ function MyProfileScreen(props) {
                     <TouchableOpacity onPress={() => props.navigation.navigate("BankInformation")} style={{ justifyContent: 'center', marginTop: RFPercentage(3), width: '86%', height: RFPercentage(8), backgroundColor: "#ffff", borderRadius: RFPercentage(2.5) }}>
                         <View style={{ alignItems: 'center', flexDirection: 'row', marginLeft: RFPercentage(4) }}>
                             <Image source={require('../../assets/images/pass.png')} />
-                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>
+                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2) }}>
                                 Bank Information
                             </Text>
                         </View>
@@ -91,7 +91,7 @@ function MyProfileScreen(props) {
                     <TouchableOpacity onPress={() => props.navigation.navigate("MyProfileEditScreen")} style={{ justifyContent: 'center', marginTop: RFPercentage(3), width: '86%', height: RFPercentage(8), backgroundColor: "#ffff", borderRadius: RFPercentage(2.5) }}>
                         <View style={{ alignItems: 'center', flexDirection: 'row', marginLeft: RFPercentage(4) }}>
                             <Image source={require('../../assets/images/pass.png')} />
-                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.2) }}>
+                            <Text style={{ marginLeft: RFPercentage(2), fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2) }}>
                                 Change Password
                             </Text>
                         </View>

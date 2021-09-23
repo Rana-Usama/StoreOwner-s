@@ -17,18 +17,18 @@ function MiniCard({ onPressEditIcon = () => { }, onPressTitle = () => { }, numbe
             {/* Titles */}
             <View style={{ left: RFPercentage(1.5), marginBottom: RFPercentage(1.4) }}>
                 <TouchableOpacity onPress={onPressTitle} >
-                    <Text style={{ fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(2.2) }}>
+                    <Text style={{ fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(2.1) }}>
                         {title1}
                     </Text>
                 </TouchableOpacity>
-                <Text style={{ fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(1.75), color: Colors.lightestGrey }}>
+                <Text style={{ fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(1.7), color: Colors.lightestGrey }}>
                     {title2}
                 </Text>
             </View>
             {/* Counting Circle */}
             {number ?
                 <View style={{ position: 'absolute', justifyContent: 'center', alignItems: 'center', backgroundColor: Colors.circle, borderRadius: RFPercentage(20), width: RFPercentage(3.7), height: RFPercentage(3.7), right: RFPercentage(7), top: RFPercentage(5.3) }}>
-                    <Text style={{ color: Colors.white, fontSize: RFPercentage(2.5) }}>5</Text>
+                    <Text style={{ color: Colors.white, fontSize: RFPercentage(2.4) }}>5</Text>
                 </View> : null}
             {/*Edit Icon */}
             <TouchableOpacity onPress={onPressEditIcon} style={{ right: RFPercentage(2), position: 'absolute', top: RFPercentage(3) }}>

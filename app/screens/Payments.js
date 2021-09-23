@@ -60,7 +60,7 @@ function Payments(props) {
             </Text>
 
             {/* Icon */}
-            <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(8), left: RFPercentage(4) }}>
+            <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.5} style={{ position: 'absolute', top: RFPercentage(5), left: RFPercentage(4) }}>
                 <Image source={require('../../assets/images/noti.png')} />
             </TouchableOpacity>
             {/*Top Buttons */}
@@ -75,13 +75,13 @@ function Payments(props) {
                         <View key={i} style={{ flexDirection: 'row', width: '90%', backgroundColor: Colors.white, alignItems: 'center', justifyContent: 'flex-start', height: RFPercentage(14), marginTop: RFPercentage(1.3), borderRadius: RFPercentage(2) }}>
                             {/* Titles to the left */}
                             <View style={{ left: RFPercentage(3) }}>
-                                <Text style={{ fontSize: RFPercentage(2.5), color: "#313942", fontFamily: 'Quicksand_700Bold' }}>
+                                <Text style={{ fontSize: RFPercentage(2.3), color: "#313942", fontFamily: 'Quicksand_700Bold' }}>
                                     {item.mainTitle}
                                 </Text>
-                                <Text style={{ fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.3), marginTop: RFPercentage(0) }}>
+                                <Text style={{ fontFamily: 'Quicksand_400Regular', color: '#313942', fontSize: RFPercentage(2.1), marginTop: RFPercentage(0) }}>
                                     {item.sub1}
                                 </Text>
-                                <Text style={{ marginTop: RFPercentage(1.5), fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(2), color: "#B1A9A9", top: RFPercentage(0.3) }}>
+                                <Text style={{ marginTop: RFPercentage(1.5), fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(1.9), color: "#B1A9A9", top: RFPercentage(0.3) }}>
                                     {item.sub2}
                                 </Text>
                             </View>
@@ -104,7 +104,7 @@ function Payments(props) {
                 </View>
             </ScrollView>
             {/* Bottom tab */}
-            <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
+            <BottomTab onPressFirstIcon={() => props.navigation.navigate("MyShelvesScreen")} onPressCenterIcon={() => props.navigation.navigate("CreateShelfStep1")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
         </Screen>
 
     );

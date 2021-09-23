@@ -14,6 +14,8 @@ import shelves from "../../../assets/images/shelves.png"
 import bookings from "../../../assets/images/bookings.png"
 import payments from "../../../assets/images/payments.png"
 import settings from "../../../assets/images/settings.png"
+import store from "../../../assets/images/store.png"
+
 
 
 function AppDrawer({ navigation }) {
@@ -26,7 +28,7 @@ function AppDrawer({ navigation }) {
         },
         {
             id: 1,
-            label: "Shelves",
+            label: "My Spots",
             image: shelves,
             path: "MyShelvesScreen"
         },
@@ -34,7 +36,7 @@ function AppDrawer({ navigation }) {
             id: 2,
             label: "Bookings",
             image: bookings,
-            path: "MyShelvesBookedScreen"
+            path: "MyBookings"
         },
         {
             id: 3,
@@ -44,9 +46,15 @@ function AppDrawer({ navigation }) {
         },
         {
             id: 4,
+            label: "My Store",
+            image: store,
+            path: "MyStoresScreen"
+        },
+        {
+            id: 5,
             label: "Settings",
             image: settings,
-            path: "Screen name to navigate"
+            path: "MyProfileScreen"
         },
     ]
 

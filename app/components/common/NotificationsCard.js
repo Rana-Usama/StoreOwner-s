@@ -29,13 +29,13 @@ function NotificationsCard({ title1, title2, title3, locationIcon = false }) {
 
             {/* Headings */}
             <View style={{ marginLeft: RFPercentage(7) }}>
-                <Text style={{ bottom: RFPercentage(1), color: backgroundColor ? "#717171" : Colors.iconOrange, fontFamily: 'Montserrat_600SemiBold', fontSize: RFPercentage(2.5) }}>
+                <Text style={{ bottom: RFPercentage(1), color: backgroundColor ? "#717171" : Colors.iconOrange, fontFamily: 'Montserrat_600SemiBold', fontSize: RFPercentage(2.2) }}>
                     {title1}
                 </Text>
-                <Text style={{ bottom: RFPercentage(0.3), color: backgroundColor ? "#F2994A" : Colors.yellow, fontFamily: 'Quicksand_500Medium', fontSize: RFPercentage(2) }}>
+                <Text style={{ bottom: RFPercentage(0.3), color: backgroundColor ? "#F2994A" : Colors.yellow, fontFamily: 'Quicksand_500Medium', fontSize: RFPercentage(1.8) }}>
                     {title2}
                 </Text>
-                <Text style={{ left: locationIcon ? RFPercentage(3) : RFPercentage(0), top: RFPercentage(1), color: backgroundColor ? "#82867D" : Colors.lightGrey, fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(2.1) }}>
+                <Text style={{ left: locationIcon ? RFPercentage(3) : RFPercentage(0), top: RFPercentage(1), color: backgroundColor ? "#82867D" : Colors.lightGrey, fontFamily: 'Quicksand_400Regular', fontSize: RFPercentage(2) }}>
                     {title3}
                 </Text>
             </View>

@@ -53,7 +53,7 @@ function NotificationScreen(props) {
             </Text>
 
             {/* Icon */}
-            <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(10.2), left: RFPercentage(4) }}>
+            <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.5} style={{ position: 'absolute', top: RFPercentage(7), left: RFPercentage(4) }}>
                 <Image source={require('../../assets/images/noti.png')} />
             </TouchableOpacity>
 
@@ -69,7 +69,7 @@ function NotificationScreen(props) {
             </View>
 
             {/* Bottom tab */}
-            <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
+            <BottomTab onPressFirstIcon={() => props.navigation.navigate("MyShelvesScreen")} onPressCenterIcon={() => props.navigation.navigate("CreateShelfStep1")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
         </Screen>
     );
 }

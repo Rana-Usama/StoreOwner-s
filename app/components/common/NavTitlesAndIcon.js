@@ -8,7 +8,7 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 //config
 import Colors from '../../config/Colors';
 
-function NavTitlesAndIcon({ onPress = () => { }, onPressSideText = () => { }, mainTitle, sideTitle, icon = false }) {
+function NavTitlesAndIcon({ onPressBackIcon = () => { }, onPressSideText = () => { }, mainTitle, sideTitle, icon = false }) {
     return (
         <View style={{ width: '90%', marginTop: RFPercentage(9), alignItems: 'center', justifyContent: 'center' }}>
             {/* BackIcon */}
@@ -21,12 +21,12 @@ function NavTitlesAndIcon({ onPress = () => { }, onPressSideText = () => { }, ma
                         fontSize: RFPercentage(3.8),
                         fontWeight: "bold",
                     }}
-                    onPress={onPress}
+                    onPress={onPressBackIcon}
                 />
             </TouchableOpacity>
             {/* Main Heading */}
             <View style={{ position: 'absolute', alignSelf: 'center' }}>
-                <Text style={{ fontFamily: 'Montserrat_500Medium', fontSize: RFPercentage(2.7), color: Colors.lightGrey }}>
+                <Text style={{ fontFamily: 'Montserrat_500Medium', fontSize: RFPercentage(2.6), color: Colors.lightGrey }}>
                     {mainTitle}
                 </Text>
             </View>
@@ -37,7 +37,7 @@ function NavTitlesAndIcon({ onPress = () => { }, onPressSideText = () => { }, ma
                 </TouchableOpacity>
                 :
                 <TouchableOpacity onPress={onPressSideText} style={{ position: 'absolute', alignSelf: 'flex-end', right: RFPercentage(2.5) }}>
-                    <Text style={{ fontFamily: "Quicksand_500Medium", color: Colors.lightGrey, fontSize: RFPercentage(1.8) }}>
+                    <Text style={{ fontFamily: "Quicksand_500Medium", color: Colors.lightGrey, fontSize: RFPercentage(1.7) }}>
                         {sideTitle}
                     </Text>
                 </TouchableOpacity>

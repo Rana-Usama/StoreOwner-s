@@ -51,7 +51,7 @@ function BankInformation(props) {
             </Text>
 
             {/* Icon */}
-            <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(10.2), left: RFPercentage(4) }}>
+            <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.5} style={{ position: 'absolute', top: RFPercentage(8), left: RFPercentage(4) }}>
                 <Image source={require('../../assets/images/profileicon.png')} />
             </TouchableOpacity>
 

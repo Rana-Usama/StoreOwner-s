@@ -60,7 +60,7 @@ function CreateShelfStep3(props) {
                 <View style={{ backgroundColor: Colors.white, position: 'absolute', bottom: 0, width: '100%', height: RFPercentage(4), borderTopLeftRadius: RFPercentage(5), borderTopRightRadius: RFPercentage(5) }}>
                 </View>
                 {/* Icon */}
-                <TouchableOpacity style={{ position: 'absolute', top: RFPercentage(8), left: RFPercentage(4) }}>
+                <TouchableOpacity onPress={() => props.navigation.openDrawer()} activeOpacity={0.5} style={{ position: 'absolute', top: RFPercentage(8), left: RFPercentage(4) }}>
                     <Image source={require('../../assets/images/notiDash.png')} />
                 </TouchableOpacity>
                 {/*Image Heading */}
@@ -141,7 +141,7 @@ function CreateShelfStep3(props) {
             {bottomTab ?
                 <View style={{ position: 'absolute', width: '100%', bottom: 0 }}>
                     {/* Bottom Tab */}
-                    <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
+                    <BottomTab onPressFirstIcon={() => props.navigation.navigate("MyShelvesScreen")} onPressCenterIcon={() => props.navigation.navigate("CreateShelfStep1")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
                 </View> :
                 null
             }

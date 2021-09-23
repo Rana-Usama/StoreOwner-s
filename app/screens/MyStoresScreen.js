@@ -11,7 +11,7 @@ import NavTitlesAndIcon from '../components/common/NavTitlesAndIcon';
 //config
 import Colors from '../config/Colors';
 import BottomTab from '../components/common/BottomTab';
-import MyAppButton from './../components/common/MyAppButton';
+import CreateShelfStep1 from './CreateShelfStep1';
 
 const { height } = Dimensions.get('window');
 
@@ -43,7 +43,7 @@ function MyStoresScreen(props) {
         <Screen style={{ flex: 1, justifyContent: 'flex-start', alignItems: 'center', backgroundColor: "#F7F7F7" }}>
             {/* Nav Icon and titles */}
             <View style={{ justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-                <NavTitlesAndIcon mainTitle="My Stores" sideTitle="ADD" />
+                <NavTitlesAndIcon onPressBackIcon={() => props.navigation.navigate("CreateStoreScreen")} mainTitle="My Stores" sideTitle="ADD" />
             </View >
             {/* Cart */}
             <View style={{ width: '100%', alignItems: 'center', justifyContent: 'center', marginTop: RFPercentage(4) }}>
@@ -95,7 +95,7 @@ function MyStoresScreen(props) {
             </Modal>
 
             {/* Bottom tab */}
-            <BottomTab onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
+            <BottomTab onPressFirstIcon={() => props.navigation.navigate("MyShelvesScreen")} onPressCenterIcon={() => props.navigation.navigate("CreateShelfStep1")} onPressNotification={() => props.navigation.navigate("NotificationScreen")} />
         </Screen>
     );
 }
