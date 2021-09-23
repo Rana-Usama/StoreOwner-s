@@ -83,6 +83,7 @@ export default function App() {
       <Stack.Screen name="CreateShelfStep1" component={CreateShelfStep1} />
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
+      <Stack.Screen name="ViewBookingScreen" component={ViewBookingScreen} />
       <Drawer.Screen name="PopUp" component={PopUp} />
       <Drawer.Screen name="ViewShelfEditScreen" component={ViewShelfEditScreen} />
       <Drawer.Screen name="MyStoresScreen" component={MyStoresScreen} />
@@ -95,10 +96,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none" initialRouteName="HomeDrawer">
+      <Stack.Navigator headerMode="none" initialRouteName="SplashScreen">
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-        <Stack.Screen name="ViewBookingScreen" component={ViewBookingScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="HomeDrawer" component={HomeDrawer} />
         <Stack.Screen name="SignupScreen" component={SignupScreen} />

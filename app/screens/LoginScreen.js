@@ -99,7 +99,6 @@ function LoginScreen(props) {
             </Text>
           </TouchableOpacity>
 
-
           <View style={{ height: RFPercentage(2.5), backgroundColor: "rgba(195, 211, 212, 0.5)", width: 1, }}></View>
 
           {/* create account */}
